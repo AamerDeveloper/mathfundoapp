@@ -1,5 +1,15 @@
 .App {
   text-align: center;
+  background-color: brown;
+}
+
+.tabnav {
+  text-decoration: none;
+}
+
+.bttn{
+  margin-left: 120px;
+
 }
 
 .App-logo {

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const Topnav = () => {
   return (
     <React.Fragment>
-      <Grid container spacing={2}>
+      <Grid container spacing={3}>
         <Grid item xs={2} className="img">
           <img
             src="https://pickupbiz.com/static/media/pickupbizzlogo.fbf33cad.jpg"
@@ -16,7 +16,7 @@ export const Topnav = () => {
 
         <Grid item xs={1}>
           <Link to="/Numbers" className="tabnav">
-            <Button variant="contained" color="success">
+            <Button variant="contained" color="success" className="bttn">
               Number
             </Button>
           </Link>
@@ -41,8 +41,7 @@ export const Topnav = () => {
         <Grid item xs={1}>
           <Link to="/Geo" className="tabnav">
             <Button color="success" variant="contained">
-              {" "}
-              GEOMETRY
+              GEOMETRy
             </Button>
           </Link>
         </Grid>
