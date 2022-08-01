@@ -7,11 +7,15 @@ export const WishList = () => {
   const [txt, settxt] = useState("");
   const [filt, setfilt] = useState([]);
 
-  const handleAdd = () => {
+  const handleAdd = () => {    
     setfilt([txt, ...data]);
     setdata([txt, ...data]);
   };
 
+  const handleSearch = (e) => {
+   const filtered = data.filter((item) =>
+      item.toUpperCase().includes(e.target.value.toUpperCase())
+    );
   const handleDelete = (Wish) => {
     const filtered = data.filter((item) => item !== Wish);
     setfilt(filtered);
@@ -20,20 +24,25 @@ export const WishList = () => {
 
   return (
     <React.Fragment>
-      <h3>Wished List</h3>
+      <h3>Wished List   </h3>  
       <Grid container spacing={3}>
-        <Grid item xs={6}>
+        <Grid item xs={3}>
           <TextField
             label="Enter Wish"
             onChange={(e) => settxt(e.target.value)}
             fullWidth
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={3}>
           <Button variant="contained" onClick={handleAdd}>
             Add Wish
           </Button>
         </Grid>
+
+        <Grid item xs={6}>
+          <TextField label="Search...." fullWidth onChange={handleSearch} />
+        </Grid>
+
         {filt.map((item) => (
           <Grid item xs={3}>
             <WishItem item={item} handleDelete={handleDelete} />
